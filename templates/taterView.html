@@ -1,0 +1,46 @@
+<md-toolbar class="md-whiteframe-z1 md-hue-1" style="top:0; position: fixed; opacity: .9;" layout="row">
+    <div flex></div>
+    <div class="md-toolbar-tools max-width" flex-xs="100" flex-gt-xs="90" flex-gt-md="75" layout="row">
+        <md-button class="md-icon-button" ng-click="go('/taters')">
+            <md-icon><i class="material-icons">arrow_back</i></md-icon>
+        </md-button>
+        <div class="md-title" ng-click="go('/taters')">
+            more potatoes on flickr!
+        </div>
+    </div>
+    <div flex></div>
+</md-toolbar>
+<div class="md-padding" style="margin-top: 64px;" layout="row">
+    <div flex></div>
+    <div flex-xs="100" flex-gt-xs="90" flex-gt-md="75" layout="column">
+        <div class="md-title md-padding"><a href="{{potato.link}}">{{potato.title}}</a></div>
+        <div layout="row" class="md-padding">
+        <a href="{{potato.description | authorUrl}}">{{potato.author | author}}</a><span>&nbsp;|</span>
+            <span hide-gt-sm>Published <span am-time-ago="potato.published"></span>.</span>
+            <span hide show-gt-sm>&nbsp; published on {{potato.published | amDateFormat:'Do MMM YYYY @ h:mm a'}}.
+                <small>(<span am-time-ago="potato.published"></span>)</small>
+            </span>
+        </div>
+        <div layout="row" layout-xs="column" flex>
+            <img class="md-padding" ng-src="{{potato.media.m}}" alt="{{potato.title}}">
+
+            <div layout="column" flex-gt-xs="66" flex-gt-sm="75">
+                <p>
+                    Lorem ipsum dolor sit amet, orci libero, non donec ipsum donec vestibulum, vel odio, orci eget vehicula pellentesque dui facilisi, neque sed fusce accumsan ac. Penatibus mauris consequat habitasse nec risus metus, praesent non duis tellus at, ac non eu ipsum a interdum, nulla ut magna montes duis vel, lectus accumsan orci. Integer nec tellus sed sed. Sit sem sed ultrices mollis nulla, et vel in pharetra nibh imperdiet, metus veritatis aliquet sit justo libero. Tortor non cursus, ante sociis morbi purus mollis, natoque mauris et risus purus quisque lacinia. Nam platea eu wisi in, mi tortor ante, massa lectus, elit enim enim duis vivamus urna eros. Vehicula vestibulum magna nibh rutrum quam magna, sed potenti sit fringilla.
+                </p>
+                <p>
+                    Viverra fermentum iaculis dui lorem, et maecenas fusce montes fusce, facilisi cras pede tristique nam blandit eros, tincidunt erat id lectus elit. Erat mauris senectus praesentium vel eget vestibulum, scelerisque in. Tincidunt risus fusce nisl arcu dolor turpis. Eleifend massa lacinia velit, vestibulum malesuada, ac et orci amet sed et. Nunc quam, suspendisse nulla mauris luctus nulla potenti nibh.
+                </p>
+
+            </div>
+        </div>
+        <md-grid-list layout-padding md-cols="4" md-cols-gt-sm="8" md-row-height="3:1"
+                      md-gutter="16px" flex>
+            Tags:
+            <md-grid-tile ng-repeat="tag in tags">
+                    <md-button class="ellipsis" ng-href="https://www.flickr.com/search/?q={{tag}}" >{{tag}}</md-button>
+            </md-grid-tile>
+        </md-grid-list>
+    </div>
+    <div flex></div>
+</div>

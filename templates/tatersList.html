@@ -1,0 +1,65 @@
+<md-toolbar ng-hide="searching" class="md-whiteframe-z1 md-hue-1" style="top: 0; position: fixed; opacity: .9;" layout="row">
+    <div flex></div>
+    <div class="md-toolbar-tools" flex-xs="100" flex-gt-xs="90" flex-gt-md="75" layout="row">
+        <h3 class="md-title">
+            <span>Potatoes on flickr!</span>
+        </h3>
+        <div flex></div>
+        <md-button class="md-icon-button" ng-click="searching = true">
+            <md-icon><i class="material-icons">search</i></md-icon>
+        </md-button>
+    </div>
+    <div flex></div>
+</md-toolbar>
+<md-toolbar md-theme="white" class="md-whiteframe-z2" style="top: 0; position: fixed; opacity: .9;" ng-show="searching" layout="row">
+    <div flex></div>
+    <div class="md-toolbar-tools" layout="row" flex-xs="100" flex-gt-xs="90" flex-gt-md="75">
+        <md-button class="md-icon-button" ng-click="searching = !searching">
+            <md-icon><i class="material-icons">arrow_back</i></md-icon>
+        </md-button>
+        <div class="md-title" ng-click="searching = !searching" hide show-gt-sm>
+            Back
+        </div>
+        &nbsp;&nbsp;
+        <md-input-container class="md-title" flex>
+            <label></label>
+            <input id="inputsearch" ng-model="searchText"
+                   placeholder="search for the best spuds"
+                   autofocus ng-blur="searchText = ''"
+                   ng-keyup="$event.keyCode == 27 && (searching = false)">
+        </md-input-container>
+    </div>
+    <div flex></div>
+</md-toolbar>
+<md-progress-linear style="top: 0; position: fixed; z-index: 10;" md-mode="indeterminate" ng-show="loading"></md-progress-linear>
+<md-content class="md-padding" style="margin-top: 64px;" layout="row" flex ng-click="searching = false">
+    <div flex></div>
+    <md-list flex-xs="100" flex-gt-xs="90" flex-gt-md="75" class="md-hue-1" layout-align="center">
+        <md-list-item class="space-under" ng-repeat="potato in potatolist.items | filter:searchText" layout="row" layout-align="center">
+            <img ng-src="{{potato.media.m}}" alt="{{potato.title}}" class="list-img" ng-click="setChosenPotato(potato)">
+            <div layout="column" style="min-width: 0;" flex="100">
+                <div layout="row">
+                    <div class="md-title ellipsis" f>{{potato.title}}</div>
+                    <div hide show-gt-sm flex="10"></div>
+                </div>
+                <div layout="row">
+                   <div hide-gt-sm>Published <span am-time-ago="potato.published"></span>.</div>
+                </div>
+                <p layout-xs="column" layout-align-xs="start start">
+                    <a class="paper-like" href="{{potato.description | authorUrl}}">{{potato.author | author}}</a>
+                    <span hide show-gt-sm>&nbsp; published on {{potato.published | amDateFormat:'Do MMM YYYY @ h:mm a'}}.
+                        <small>(<span am-time-ago="potato.published"></span>)</small>
+                        &nbsp;
+                    </span>
+                    <a class="paper-like" href="{{potato.link}}">
+                        <span hide-xs>&nbsp;</span>
+                        view on flickr
+                        <i class="material-icons small">launch</i>
+                    </a>
+                </p>
+                <br/>
+            </div>
+        </md-list-item>
+    </md-list>
+    <div flex></div>
+</md-content>

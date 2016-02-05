@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <title>Potatoes on Flickr!</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="./lib/robotodraft/robotodraft.css"/>
+    <link rel="stylesheet" href="/bower_components/material-design-lite/material.min.css">
+
+    <link rel="stylesheet" href="./css/app.css"/>
+    
+    <script src="./lib/angular/angular.min.js"></script>
+    <script src="./lib/angular-animate/angular-animate.min.js"></script>
+    <script src="./lib/angular-aria/angular-aria.min.js"></script>
+    <script src="./lib/angular-route/angular-route.min.js"></script>
+    <script src="./lib/material-design-lite/material.min.js"></script>
+    
+    <!-- inject:js -->
+    <!-- endinject -->
+  </head>
+
+  <body ng-app="taters">
+	{{1+2}}
+        <ng-view tabIndex="-1"></ng-view>
+  </body>
+</html>

@@ -9,9 +9,6 @@ $spudBrownTrans: rgba(170, 160, 154, .75);
 $spudBrownlt: #e3ddd9;
 $spudBrownDark: #262220;
 
-
-
-
 html, body {
   font-family: 'Roboto', sans-serif;
   background-color: $spudBrownlt;
@@ -20,6 +17,7 @@ html, body {
   margin: 0px;
   padding: 0px;
 }
+
 *:focus {
   outline: none;
 }

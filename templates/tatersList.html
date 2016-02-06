@@ -1,4 +1,4 @@
-<md-toolbar ng-hide="searching" class="md-whiteframe-z1 md-hue-1" style="top: 0; position: fixed; opacity: .9;" layout="row">
+<md-toolbar ng-hide="searching" class="md-whiteframe-z1 md-hue-1 top-toolbar" layout="row">
     <div flex></div>
     <div class="md-toolbar-tools" flex-xs="100" flex-gt-xs="90" flex-gt-md="75" layout="row">
         <h3 class="md-title">
@@ -11,7 +11,7 @@
     </div>
     <div flex></div>
 </md-toolbar>
-<md-toolbar md-theme="white" class="md-whiteframe-z2" style="top: 0; position: fixed; opacity: .9;" ng-show="searching" layout="row">
+<md-toolbar md-theme="white" class="md-whiteframe-z2 top-tollbar" ng-show="searching" layout="row">
     <div flex></div>
     <div class="md-toolbar-tools" layout="row" flex-xs="100" flex-gt-xs="90" flex-gt-md="75">
         <md-button class="md-icon-button" ng-click="searching = !searching">
@@ -31,15 +31,15 @@
     </div>
     <div flex></div>
 </md-toolbar>
-<md-progress-linear style="top: 0; position: fixed; z-index: 10;" md-mode="indeterminate" ng-show="loading"></md-progress-linear>
-<md-content class="md-padding" style="margin-top: 64px;" layout="row" flex ng-click="searching = false">
+<md-progress-linear class="above-tollbar" md-mode="indeterminate" ng-show="loading"></md-progress-linear>
+<md-content class="md-padding under-top" layout="row" flex ng-click="searching = false">
     <div flex></div>
     <md-list flex-xs="100" flex-gt-xs="90" flex-gt-md="75" class="md-hue-1" layout-align="center">
         <md-list-item class="space-under" ng-repeat="potato in potatolist.items | filter:searchText" layout="row" layout-align="center">
             <img ng-src="{{potato.media.m}}" alt="{{potato.title}}" class="list-img" ng-click="setChosenPotato(potato)">
             <div layout="column" style="min-width: 0;" flex="100">
                 <div layout="row">
-                    <div class="md-title ellipsis" f>{{potato.title}}</div>
+                    <div class="md-title ellipsis">{{potato.title}}</div>
                     <div hide show-gt-sm flex="10"></div>
                 </div>
                 <div layout="row">

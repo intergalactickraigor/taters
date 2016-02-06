@@ -147,3 +147,19 @@ img.list-img:active{
 .space-under{
   margin-bottom: 4px;
 }
+
+.top-toolbar{
+  top: 0;
+  position: fixed;
+  opacity: .9;
+}
+
+.above-toolbar{
+  top: 0;
+  position: fixed;
+  z-index: 10;
+}
+
+.under-top{
+  margin-top: 64px;
+}

@@ -31,6 +31,8 @@ angular.module('taters.controllers', [])
                 };
 
                 var getFlickrFeed = function() {
+                    $scope.searching = false;
+                    $scope.searchText = "";
                     $scope.loading = true;
                     api.get().then(loadSuccess).then(loadFailed);
                 }();

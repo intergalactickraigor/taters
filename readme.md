@@ -12,4 +12,4 @@ gulp
 
 **if you have cordova installed you can add a platform and run in a few steps using the cordova cli**
 
-**contains a filter for the list of poatoes**
+**contains a filter for the list of potatoes**
